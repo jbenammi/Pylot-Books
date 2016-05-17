@@ -1,0 +1,12 @@
+from system.core.router import routes
+routes['default_controller'] = 'BookReviews'
+routes['POST']['/login'] = 'BookReviews#login'
+routes['POST']['/register'] = 'BookReviews#register'
+routes['GET']['/dashboard'] = 'BookReviews#dashboard'
+routes['GET']['/book/<id>'] = 'BookReviews#book'
+routes['POST']['/review'] = 'BookReviews#add_review_book'
+routes['GET']['/user/<id>'] = 'BookReviews#view_user'
+routes['GET']['/add_book'] = 'BookReviews#view_add_book'
+routes['POST']['/new_book'] = 'BookReviews#add_new_books'
+routes['GET']['/Logout'] = 'BookReviews#logout'
+routes['GET']['/delete_review/<id>'] = 'BookReviews#delete_reviews'

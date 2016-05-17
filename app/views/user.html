@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Jonathan Ben-Ammi">
+	<title></title>
+	<meta name="description" content="">
+	<link rel="stylesheet" type="text/css" href="/static/css/materialize.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/materialize_icons.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+	<script src="/static/js/jquery-2.2.3.js"></script>
+	<script src="/static/js/jquery-ui.js"></script>
+	<script src="/static/js/materialize.js"></script>
+	<script type="text/javascript" src=""></script>
+</head>
+<body>
+	<nav>
+		<div class="nav-wrapper blue">
+			<div class="nav-wrapper container">
+				<p id="logo-container" class="brand-logo left"></p>
+				<div id="navlinks">
+					<ul class="right">
+						<li><a href="/dashboard">Home</a></li>
+						<li><a href="/add_book">Add Book and Review</a></li>
+						<li><a href="/Logout">Logout</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<br>
+<div class="container">
+	<div class="row">
+		<div class="col s6">
+			<h4>User Alias: {{book_list[0]['alias']}}</h4>
+			<h5>Name: {{book_list[0]['user_name']}}</h5>
+			<h5>E-Mail: {{book_list[0]['email']}}</h5>
+			<h5>Total Reviews: {{total}}</h5>
+
+			<br>
+			<h5>Posted Reviews on the following books:</h5>
+			{% for book in book_list %}
+			<p><a href="/book/{{book['b_id']}}">{{book['title']}}</a></p>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+</body>
+</html>

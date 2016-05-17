@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="Jonathan Ben-Ammi">
+	<title></title>
+	<meta name="description" content="">
+	<link rel="stylesheet" type="text/css" href="/static/css/materialize.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/materialize_icons.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+	<script src="/static/js/jquery-2.2.3.js"></script>
+	<script src="/static/js/jquery-ui.js"></script>
+	<script src="/static/js/materialize.js"></script>
+	<script type="text/javascript" src=""></script>
+</head>
+<body>
+	<nav>
+		<div class="nav-wrapper blue">
+			<div class="nav-wrapper container">
+				<p id="logo-container" class="brand-logo left">Welcome, {{session['logged_info']['alias']}}</p>
+				<div id="navlinks">
+					<ul class="right">
+						<li><a href="/add_book">Add Book and Review</a></li>
+						<li><a href="/Logout">Logout</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<br>
+<div class="container">
+	<div class="row">
+		<div class="col s6">
+			<h4>Recent Book Reviews</h4>
+			<br>
+			{% for review in recent_reviews %}
+			<a href="/book/{{review['b_id']}}"><h5>{{review['title']}}</h5></a>
+			<p>Rating:</p>
+			{% for num in range(0, review['rating']) %}
+			<div class="star"></div>
+			{% endfor %}
+			<p><a href="/user/{{review['u_id']}}">{{review['alias']}}</a> says: {{review['review']}}</p>
+			<p>Posted on {{review['review_date'].strftime('%B %d, %Y')}}</p>
+			<br>
+			{% endfor %}
+		</div>
+		<div class="col s6">
+			<h4>Other Books with reviews</h4>
+			<br>
+			<div class="scroll">
+			{% for book in book_list %}
+			<p><a href="/book/{{book['id']}}">{{book['title']}}</a></p>
+			{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

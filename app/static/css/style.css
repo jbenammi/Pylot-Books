@@ -1,0 +1,45 @@
+* {
+	margin: 0%;
+	-webkit-margin-before: 0px;
+	-webkit-margin-after: 0px;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	padding: 0px;
+}
+
+#message h6.v-align-btm {
+	margin-top: .75em;
+}
+
+.btm-m10 {
+	margin-bottom: 10px;
+}
+
+.btm-m20 {
+	margin-bottom: 20px;
+}
+
+.top-m10 {
+	margin-top: 10px;
+}
+
+.top-m20 {
+	margin-top: 20px;
+}
+
+.link {
+	cursor: pointer;
+}
+
+.star {
+	display: inline-block;
+	vertical-align: bottom;
+	background: yellow;
+	width: 1em;
+	height: 1em;
+}
+
+.scroll {
+	height: 200px;
+	overflow-y: scroll;
+}
